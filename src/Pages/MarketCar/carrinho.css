@@ -1,0 +1,243 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #ffddc1;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+h1 i {
+  margin-right: 10px; /* Espaçamento entre o ícone e o texto */
+  color: #d69c58; /* Cor do ícone */
+}
+
+button {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #000000;
+}
+
+/* Container para os cursos e o carrinho */
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Container para a lista de categorias */
+.categorias-container {
+  flex: 1;
+  max-width: 300px; /* Largura máxima igual ao carrinho */
+  border: 1px solid #ddd;
+  border-radius: 10px; /* Arredondamento das bordas */
+  padding: 15px; /* Padding igual ao carrinho */
+  background: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra igual ao carrinho */
+  margin-right: 20px; /* Espaçamento entre categorias e cursos */
+  position: sticky;
+  top: 20px;
+  max-height: 500px; /* Altura máxima */
+  overflow-y: auto; /* Barra de rolagem vertical quando necessário */
+}
+
+/* Título das categorias */
+.categorias-container h2 {
+  font-size: 20px; /* Ajustado para combinar com o tamanho do título do carrinho */
+  margin-bottom: 20px; /* Espaçamento inferior igual ao carrinho */
+}
+
+/* Lista de categorias */
+.categorias-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Estilo dos itens da lista de categorias */
+.categorias-container .categoria-item {
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.categorias-container .categoria-item:hover {
+  background-color: #f0f0f0;
+}
+
+.categorias-container .categoria-item.ativo {
+  background-color: #d69c58;
+  color: white;
+}
+
+/* Container para a lista de cursos */
+.cursos-container {
+  flex: 2;
+}
+
+/* Lista de cursos */
+.cursos-container ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Exibir três itens por linha */
+  gap: 30px;
+}
+
+/* Estilo dos itens da lista de cursos */
+.cursos-container li {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  background: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cursos-container li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.cursos-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.cursos-container p {
+  margin: 15px 0;
+}
+
+.cursos-container button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  background-color: #d69c58;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cursos-container button:hover {
+  background-color: #ff5500;
+}
+
+/* Container para o carrinho de compras */
+.carrinho-container {
+  position: fixed;
+  top: 20px;
+  right: 0;
+  width: 300px;
+  height: 500px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  background: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+}
+
+/* Lista de itens do carrinho */
+.carrinho-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Estilo dos itens da lista de carrinho */
+.carrinho-container li {
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.carrinho-container li:last-child {
+  border-bottom: none;
+}
+
+.carrinho-container img {
+  max-width: 80px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.carrinho-container p {
+  margin: 5px 0;
+}
+
+.carrinho-container button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #94979b;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.carrinho-container button:hover {
+  background-color: #ff4444;
+}
+
+.carrinho-container h1 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .cursos-container, .carrinho-container, .categorias-container {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .carrinho-container {
+    margin-top: 20px; /* Ajuste do espaço superior para o carrinho em telas menores */
+    position: static;
+    width: auto;
+  }
+
+  .categorias-container {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .cursos-container ul {
+    grid-template-columns: repeat(2, 1fr); /* Dois itens por linha em telas menores */
+  }
+}
+
+@media (max-width: 480px) {
+  .cursos-container ul {
+    grid-template-columns: 1fr; /* Um item por linha em telas muito pequenas */
+  }
+}
